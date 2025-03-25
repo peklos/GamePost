@@ -1,0 +1,230 @@
+/* Основные стили */
+body { 
+    background-color: black; 
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Обертка контента */
+.content-wrapper {
+    background-color: #333;
+    padding: 20px 0;
+}
+
+/* Навигационная панель */
+.navbar { 
+    background: linear-gradient(135deg, #b00000 0%, #8a0000 100%);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(176, 0, 0, 0.3);
+    padding: 15px 0;
+}
+
+.navbar-brand img {
+    transition: transform 0.3s;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: white !important;
+    letter-spacing: 1px;
+    padding: 8px 20px !important;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 70%;
+    left: 15%;
+}
+
+/* Стиль для активного пункта меню */
+.nav-item.active .nav-link {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.nav-item.active .nav-link::after {
+    width: 70%;
+    left: 15%;
+}
+
+/* Дополнительно можно добавить небольшое отличие для активного пункта */
+.nav-item.active .nav-link {
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+/* Карточки игр */
+.game-card { 
+    background-color: #444; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-bottom: 20px;
+    border-left: 3px solid #b00000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-card img {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.game-card p {
+    font-size: 1rem;
+    margin-top: 15px;
+    color: #e0e0e0;
+    text-align: justify;
+    text-justify: inter-word; 
+}
+
+/* Заголовки */
+.header-title {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff0000;
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 3px solid #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.game-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff0000;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+    letter-spacing: 1px;
+    margin: 15px 0 10px;
+}
+
+/* Рейтинги игр */
+.game-rating {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ff8a8a;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Номера в топе */
+.game-number {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #b00000;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* Футер */
+.footer { 
+    background-color: #222; 
+    padding: 30px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    color: white !important;
+    font-size: 2.2rem;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff0000 !important;
+    transform: translateY(-2px) scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+.footer-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.footer-form .form-control {
+    background-color: #444;
+    border: 1px solid #666;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-form .btn {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Анимации */
+[data-aos] {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2rem;
+        padding: 15px;
+    }
+    
+    .game-title {
+        font-size: 1.5rem;
+    }
+    
+    .game-card {
+        padding: 15px;
+    }
+    
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+}
